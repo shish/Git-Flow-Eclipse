@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Git-Flow Action Set"
+            visible="true"
+            id="Git-Flow-Eclipse.actionSet">
+         <menu
+               label="&amp;Git Flow"
+               id="gitFlowMenu">
+            <separator
+                  name="globalGroup">
+            </separator>
+            <separator
+                  name="developGroup">
+            </separator>
+            <separator
+                  name="featureGroup">
+            </separator>
+            <separator
+                  name="hotfixGroup">
+            </separator>
+            <separator
+                  name="releaseGroup">
+            </separator>
+         </menu>
+         <!-- global -->
+         <action
+               label="&amp;Commit"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Commit current workspace"
+               menubarPath="gitFlowMenu/globalGroup"
+               id="org.shishnet.gfe.actions.CommitAction">
+         </action>
+         <action
+               label="&amp;Sync"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Pull remote changes, push local changes"
+               menubarPath="gitFlowMenu/globalGroup"
+               id="org.shishnet.gfe.actions.SyncAction">
+         </action>
+         <action
+               label="Switch &amp;Branch"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Check out a branch"
+               menubarPath="gitFlowMenu/globalGroup"
+               id="org.shishnet.gfe.actions.SwitchBranchAction">
+         </action>
+         <!-- if develop is active -->
+         <action
+               label="Start &amp;Feature"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Create a new feature branch"
+               menubarPath="gitFlowMenu/developGroup"
+               id="org.shishnet.gfe.actions.StartFeatureAction">
+         </action>
+         <action
+               label="Start &amp;Hotfix"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Create a new hotfix branch"
+               menubarPath="gitFlowMenu/developGroup"
+               id="org.shishnet.gfe.actions.StartHotfixAction">
+         </action>
+         <action
+               label="Start &amp;Release"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Create a new release branch"
+               menubarPath="gitFlowMenu/developGroup"
+               id="org.shishnet.gfe.actions.StartReleaseAction">
+         </action>
+         <!-- if feature is active -->
+         <action
+               label="Finish Feature"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Merge feature into develop"
+               menubarPath="gitFlowMenu/featureGroup"
+               id="org.shishnet.gfe.actions.FinishFeatureAction">
+         </action>
+         <action
+               label="Share &amp;Work-In-Progress Feature"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Push feature branch to server"
+               menubarPath="gitFlowMenu/featureGroup"
+               id="org.shishnet.gfe.actions.PublishFeatureAction">
+         </action>
+         <!-- if hotfix is active -->
+         <action
+               label="Finish Hotfix"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Merge hotfix into master"
+               menubarPath="gitFlowMenu/hotfixGroup"
+               id="org.shishnet.gfe.actions.FinishHotfixAction">
+         </action>
+         <!-- if release is active -->
+         <action
+               label="Finish Release"
+               icon="icons/sample.gif"
+               class="org.shishnet.gfe.actions.SampleAction"
+               tooltip="Merge release into master"
+               menubarPath="gitFlowMenu/releaseGroup"
+               id="org.shishnet.gfe.actions.FinishReleaseAction">
+         </action>
+      </actionSet>
+   </extension>
+</plugin>
