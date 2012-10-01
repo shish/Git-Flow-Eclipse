@@ -2,9 +2,14 @@ package org.shishnet.gfe.actions;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.TreeSelection;
+import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.jface.dialogs.MessageDialog;
+//import org.eclipse.ui.console.*;
+
+import org.eclipse.jgit.*;
 
 /**
  * Our sample action implements workbench action delegate.
@@ -16,7 +21,8 @@ import org.eclipse.jface.dialogs.MessageDialog;
  */
 public class GFEAction implements IWorkbenchWindowActionDelegate {
 	protected IWorkbenchWindow window;
-
+	protected ISelection selection;
+	
 	/**
 	 * The constructor.
 	 */
@@ -44,6 +50,12 @@ public class GFEAction implements IWorkbenchWindowActionDelegate {
 	 * @see IWorkbenchWindowActionDelegate#selectionChanged
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
+		if(selection instanceof TreeSelection) {
+			TreeSelection ts = (TreeSelection)selection;
+			for(TreePath tp : ts.getPaths()) { 
+				System.out.println(tp.toString());
+			}
+		}
 	}
 
 	/**
